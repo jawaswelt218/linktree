@@ -6,17 +6,13 @@
   <title>JawasWelt218 – Personalisierte Lichtkunst & 3D-Fotogeschenke</title>
   <link rel="icon" href="favicon.ico" type="image/x-icon">
 
-  <!-- ✅ SEO-Metadaten -->
+  <!-- SEO & Social Meta -->
   <meta name="description" content="JawasWelt218 – einzigartige 3D-Lithophane, personalisierte Lichtkunst & Fotogeschenke mit Herz. Jetzt auf Etsy, Amazon & eBay entdecken.">
-
-  <!-- ✅ Open Graph (Social Media Vorschau) -->
   <meta property="og:title" content="JawasWelt218 – Lichtkunst & Fotogeschenke">
   <meta property="og:description" content="Einzigartige 3D-Lithophane & personalisierte Geschenke mit Herz. Jetzt entdecken.">
   <meta property="og:image" content="https://jawaswelt218.de/social_preview_jawaswelt218_gradient.jpg">
   <meta property="og:url" content="https://jawaswelt218.de">
   <meta property="og:type" content="website">
-
-  <!-- ✅ Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="JawasWelt218 – Lichtkunst & 3D-Geschenke">
   <meta name="twitter:description" content="Individuelle 3D-Lichtkunst mit Herz. Jetzt im Etsy-, Amazon- oder eBay-Shop stöbern.">
@@ -31,7 +27,7 @@
     body {
       margin: 0;
       padding: 0;
-      background: linear-gradient(to bottom right, #fff3f0, #f6e1ff);
+      background: linear-gradient(to bottom right, #f8f4ed, #e5e7f9);
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       display: flex;
       justify-content: center;
@@ -88,13 +84,22 @@
       margin-right: 0.5rem;
     }
 
+    /* ✨ Trennung Galerie */
+    .icon-divider {
+      text-align: center;
+      font-size: 1.2rem;
+      color: #d97706;
+      margin: 2.5rem 0 1.5rem;
+      font-weight: 600;
+    }
+
     /* 🖼 Mini-Galerie */
     .gallery {
       display: flex;
       gap: 12px;
       flex-wrap: wrap;
       justify-content: center;
-      margin-top: 1.5rem;
+      margin-top: 1rem;
     }
 
     .gallery img {
@@ -162,7 +167,6 @@
       background: var(--button-hover);
     }
 
-    /* 🌗 Theme Umschalter */
     #themeToggle {
       position: absolute;
       top: 20px;
@@ -174,7 +178,6 @@
       z-index: 100;
     }
 
-    /* 📱 Mobile */
     @media (max-width: 400px) {
       .profile-pic {
         width: 70vw;
@@ -211,7 +214,6 @@
     <img src="logo.png" alt="Logo von JawasWelt218" class="profile-pic" />
     <p class="description">Einzigartige 3D-Lithophane, personalisierte Lichtkunst und Fotogeschenke mit Herz</p>
 
-    <!-- 🔗 Shop- & Social-Links -->
     <a href="https://www.amazon.de/s?me=DEIN_AMAZON_SHOP_ID" class="link-button" target="_blank">
       <span class="emoji">🛒</span> Amazon-Shop besuchen
     </a>
@@ -231,29 +233,30 @@
       <span class="emoji">📧</span> Kontakt aufnehmen
     </a>
 
+    <!-- ✨ Galerie-Trenner -->
+    <div class="icon-divider">✨ Galerie ✨</div>
+
     <!-- 🖼 Mini-Galerie -->
     <div class="gallery">
-      <img src="bild1.jpg" alt="Beispielbild 1">
-      <img src="bild2.jpg" alt="Beispielbild 2">
-      <img src="bild3.jpg" alt="Beispielbild 3">
+      <img src="galerie_bild1.jpg" alt="Hochzeitslicht Lithophane">
+      <img src="galerie_bild2.jpg" alt="Katzenlicht Lithophane">
+      <img src="galerie_bild3.jpg" alt="Schlüsselanhänger Lithophane">
     </div>
   </div>
 
-  <!-- 🔝 Zurück nach oben Button -->
+  <!-- 🔝 Nach oben -->
   <button id="scrollTopBtn" title="Nach oben">🔝</button>
 
-  <!-- 🔁 JavaScript für Scroll-Button & Dark Mode -->
+  <!-- 💡 Script -->
   <script>
-    // Scroll-Button
     const btn = document.getElementById("scrollTopBtn");
-    window.onscroll = function () {
+    window.onscroll = () => {
       btn.style.display = window.scrollY > 200 ? "block" : "none";
     };
-    btn.onclick = function () {
+    btn.onclick = () => {
       window.scrollTo({ top: 0, behavior: "smooth" });
     };
 
-    // Dark Mode Umschalter
     const toggleBtn = document.getElementById("themeToggle");
     const userTheme = localStorage.getItem("theme");
     if (userTheme === "dark") {
