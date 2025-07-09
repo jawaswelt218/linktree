@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JawasWelt218 Links</title>
+  <style>
+    :root {
+      --primary: #4f46e5;
+      --background: #f3f4f6;
+      --container-bg: #ffffff;
+      --text-color: #1f2937;
+      --button-bg: var(--primary);
+      --button-hover: #4338ca;
+    }
+
+    body {
+      background: var(--background);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+    }
+
+    .container {
+      background: var(--container-bg);
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      max-width: 480px;
+      width: 100%;
+      text-align: center;
+    }
+
+.profile-pic {
+  width: 220px;                  /* gr��erer Kreis */
+  height: 220px;
+  border-radius: 50%;
+  object-fit: cover;             /* wichtig: Bild wird passend beschnitten */
+  margin-bottom: 20px;
+}
+
+
+    h1 {
+      font-size: 28px;
+      color: var(--text-color);
+      margin: 0 0 10px;
+    }
+
+    p.description {
+      font-size: 16px;
+      color: #6b7280;
+      margin-bottom: 25px;
+    }
+
+    .link-button {
+      display: block;
+      background: var(--button-bg);
+      color: #fff;
+      text-decoration: none;
+      padding: 14px;
+      margin: 10px 0;
+      border-radius: 12px;
+      font-size: 16px;
+      font-weight: 500;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+
+    .link-button:hover {
+      background: var(--button-hover);
+      transform: scale(1.03);
+    }
+
+    .emoji {
+      margin-right: 8px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img src="logo.png" alt="Profilbild" class="profile-pic">
+    <p class="description">Einzigartige 3D-Lithophane, personalisierte Lichtkunst und Fotogeschenke mit Herz</p>
+
+    <a href="https://www.etsy.com/de/shop/JawasWelt218" class="link-button" target="_blank"><span class="emoji">🛒</span>Etsy-Shop besuchen</a>
+    <a href="https://www.instagram.com/jawas_welt218" class="link-button" target="_blank"><span class="emoji">📷</span>Instagram</a>
+    <a href="https://www.facebook.com/jawaswelt218" class="link-button" target="_blank"><span class="emoji">📘</span>Facebook</a>
+    <a href="mailto:info@jawaswelt218.de" class="link-button"><span class="emoji">📩</span>Kontakt aufnehmen</a>
+  </div>
+</body>
+</html>
