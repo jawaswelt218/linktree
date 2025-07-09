@@ -44,3 +44,82 @@
       border-radius: 16px;
       box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
       width: 90vw;
+      max-width: 420px;
+      text-align: center;
+    }
+
+    .profile-pic {
+      width: 60vw;
+      max-width: 220px;
+      height: auto;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 1.5rem;
+    }
+
+    .description {
+      font-size: 1rem;
+      color: #6b7280;
+      margin-bottom: 1.5rem;
+    }
+
+    .link-button {
+      display: block;
+      background: var(--button-bg);
+      color: #fff;
+      text-decoration: none;
+      padding: 1rem;
+      margin: 0.5rem 0;
+      border-radius: 12px;
+      font-size: 1rem;
+      font-weight: 500;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+
+    .link-button:hover {
+      background: var(--button-hover);
+      transform: scale(1.03);
+    }
+
+    .emoji {
+      margin-right: 0.5rem;
+    }
+
+    @media (max-width: 400px) {
+      .profile-pic {
+        width: 70vw;
+      }
+
+      .link-button {
+        font-size: 0.95rem;
+        padding: 0.85rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img src="logo.png" alt="Logo von JawasWelt218" class="profile-pic" />
+    <p class="description">Einzigartige 3D-Lithophane, personalisierte Lichtkunst und Fotogeschenke mit Herz</p>
+
+    <a href="https://www.amazon.de/s?me=DEIN_AMAZON_SHOP_ID" class="link-button" target="_blank">
+      <span class="emoji">🛒</span> Amazon-Shop besuchen
+    </a>
+    <a href="https://www.ebay.de/usr/DEIN_EBAY_NAME" class="link-button" target="_blank">
+      <span class="emoji">💸</span> eBay-Shop besuchen
+    </a>
+    <a href="https://www.etsy.com/de/shop/JawasWelt218" class="link-button" target="_blank">
+      <span class="emoji">🛍️</span> Etsy-Shop besuchen
+    </a>
+    <a href="https://www.instagram.com/jawas_welt218" class="link-button" target="_blank">
+      <span class="emoji">📷</span> Instagram
+    </a>
+    <a href="https://www.facebook.com/jawaswelt218" class="link-button" target="_blank">
+      <span class="emoji">📘</span> Facebook
+    </a>
+    <a href="mailto:info@jawaswelt218.de" class="link-button">
+      <span class="emoji">📧</span> Kontakt aufnehmen
+    </a>
+  </div>
+</body>
+</html>
