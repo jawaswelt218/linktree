@@ -22,7 +22,6 @@
   <meta name="twitter:description" content="Individuelle 3D-Lichtkunst mit Herz. Jetzt im Etsy-, Amazon- oder eBay-Shop stöbern.">
   <meta name="twitter:image" content="https://jawaswelt218.de/social_preview_jawaswelt218_gradient.jpg">
 
-  <!-- ✅ Styles -->
   <style>
     :root {
       --primary: #4f46e5;
@@ -89,6 +88,28 @@
       margin-right: 0.5rem;
     }
 
+    /* 🖼 Mini-Galerie */
+    .gallery {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 1.5rem;
+    }
+
+    .gallery img {
+      width: 100%;
+      max-width: 120px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+
+    /* 🔝 Scroll-Button */
     #scrollTopBtn {
       position: fixed;
       bottom: 20px;
@@ -141,7 +162,7 @@
       background: var(--button-hover);
     }
 
-    /* 🌗 Theme Toggle Button */
+    /* 🌗 Theme Umschalter */
     #themeToggle {
       position: absolute;
       top: 20px;
@@ -153,7 +174,7 @@
       z-index: 100;
     }
 
-    /* 📱 Mobile Optimierung */
+    /* 📱 Mobile */
     @media (max-width: 400px) {
       .profile-pic {
         width: 70vw;
@@ -162,6 +183,10 @@
       .link-button {
         font-size: 0.95rem;
         padding: 0.85rem;
+      }
+
+      .gallery img {
+        max-width: 100px;
       }
     }
 
@@ -179,7 +204,7 @@
 </head>
 
 <body>
-  <!-- 🌗 Dark Mode Toggle Button -->
+  <!-- 🌗 Dark Mode Umschalter -->
   <button id="themeToggle" aria-label="Dark Mode">🌙</button>
 
   <div class="container">
@@ -205,14 +230,21 @@
     <a href="mailto:info@jawaswelt218.de" class="link-button">
       <span class="emoji">📧</span> Kontakt aufnehmen
     </a>
+
+    <!-- 🖼 Mini-Galerie -->
+    <div class="gallery">
+      <img src="bild1.jpg" alt="Beispielbild 1">
+      <img src="bild2.jpg" alt="Beispielbild 2">
+      <img src="bild3.jpg" alt="Beispielbild 3">
+    </div>
   </div>
 
   <!-- 🔝 Zurück nach oben Button -->
   <button id="scrollTopBtn" title="Nach oben">🔝</button>
 
-  <!-- 🔁 JavaScript für Scroll-Button und Theme -->
+  <!-- 🔁 JavaScript für Scroll-Button & Dark Mode -->
   <script>
-    // Zurück-nach-oben-Button
+    // Scroll-Button
     const btn = document.getElementById("scrollTopBtn");
     window.onscroll = function () {
       btn.style.display = window.scrollY > 200 ? "block" : "none";
@@ -224,12 +256,10 @@
     // Dark Mode Umschalter
     const toggleBtn = document.getElementById("themeToggle");
     const userTheme = localStorage.getItem("theme");
-
     if (userTheme === "dark") {
       document.body.classList.add("dark-mode");
       toggleBtn.textContent = "☀️";
     }
-
     toggleBtn.addEventListener("click", () => {
       document.body.classList.toggle("dark-mode");
       const isDark = document.body.classList.contains("dark-mode");
