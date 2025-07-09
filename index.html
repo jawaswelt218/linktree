@@ -19,6 +19,28 @@
   <meta name="twitter:image" content="https://jawaswelt218.de/social_preview_jawaswelt218_gradient.jpg">
 
   <style>
+    #scrollTopBtn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 99;
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  outline: none;
+  padding: 12px 16px;
+  border-radius: 50%;
+  font-size: 20px;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  display: none; /* Start: unsichtbar */
+  transition: background 0.3s ease;
+}
+
+#scrollTopBtn:hover {
+  background-color: var(--button-hover);
+}
+
     :root {
       --primary: #4f46e5;
       --background: #f3f4f6;
@@ -122,5 +144,20 @@
       <span class="emoji">📧</span> Kontakt aufnehmen
     </a>
   </div>
+  <!-- 🔝 Zurück nach oben Button -->
+<button id="scrollTopBtn" title="Nach oben">🔝</button>
+
+<script>
+  const btn = document.getElementById("scrollTopBtn");
+
+  window.onscroll = function () {
+    btn.style.display = window.scrollY > 200 ? "block" : "none";
+  };
+
+  btn.onclick = function () {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+</script>
+
 </body>
 </html>
