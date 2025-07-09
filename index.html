@@ -6,41 +6,48 @@
   <title>JawasWelt218 – Personalisierte Lichtkunst & 3D-Fotogeschenke</title>
   <link rel="icon" href="favicon.ico" type="image/x-icon">
 
-  <!-- Meta für SEO -->
+  <!-- ✅ SEO-Metadaten -->
   <meta name="description" content="JawasWelt218 – einzigartige 3D-Lithophane, personalisierte Lichtkunst & Fotogeschenke mit Herz. Jetzt auf Etsy, Amazon & eBay entdecken.">
+
+  <!-- ✅ Open Graph (Social Media Vorschau) -->
   <meta property="og:title" content="JawasWelt218 – Lichtkunst & Fotogeschenke">
   <meta property="og:description" content="Einzigartige 3D-Lithophane & personalisierte Geschenke mit Herz. Jetzt entdecken.">
   <meta property="og:image" content="https://jawaswelt218.de/social_preview_jawaswelt218_gradient.jpg">
   <meta property="og:url" content="https://jawaswelt218.de">
   <meta property="og:type" content="website">
+
+  <!-- ✅ Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="JawasWelt218 – Lichtkunst & 3D-Geschenke">
   <meta name="twitter:description" content="Individuelle 3D-Lichtkunst mit Herz. Jetzt im Etsy-, Amazon- oder eBay-Shop stöbern.">
   <meta name="twitter:image" content="https://jawaswelt218.de/social_preview_jawaswelt218_gradient.jpg">
 
+  <!-- ✅ Styles -->
   <style>
+    /* Zurück-nach-oben Button */
     #scrollTopBtn {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  z-index: 99;
-  background-color: var(--primary);
-  color: white;
-  border: none;
-  outline: none;
-  padding: 12px 16px;
-  border-radius: 50%;
-  font-size: 20px;
-  cursor: pointer;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-  display: none; /* Start: unsichtbar */
-  transition: background 0.3s ease;
-}
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 99;
+      background-color: var(--primary);
+      color: white;
+      border: none;
+      outline: none;
+      padding: 12px 16px;
+      border-radius: 50%;
+      font-size: 20px;
+      cursor: pointer;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+      display: none;
+      transition: background 0.3s ease;
+    }
 
-#scrollTopBtn:hover {
-  background-color: var(--button-hover);
-}
+    #scrollTopBtn:hover {
+      background-color: var(--button-hover);
+    }
 
+    /* Farbvariablen */
     :root {
       --primary: #4f46e5;
       --background: #f3f4f6;
@@ -50,10 +57,11 @@
       --button-hover: #4338ca;
     }
 
+    /* Grundlayout – HIER ist der neue Verlauf */
     body {
       margin: 0;
       padding: 0;
-      background: var(--background);
+      background: linear-gradient(to bottom right, #f8f4ed, #e5e7f9);
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       display: flex;
       justify-content: center;
@@ -70,7 +78,6 @@
       max-width: 420px;
       text-align: center;
       animation: fadeIn 0.6s ease-out;
-
     }
 
     .profile-pic {
@@ -120,24 +127,27 @@
         padding: 0.85rem;
       }
     }
-    @keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: scale(0.98);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
 
+    /* Einblendanimation */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: scale(0.98);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
   </style>
 </head>
+
 <body>
   <div class="container">
     <img src="logo.png" alt="Logo von JawasWelt218" class="profile-pic" />
     <p class="description">Einzigartige 3D-Lithophane, personalisierte Lichtkunst und Fotogeschenke mit Herz</p>
 
+    <!-- Shop- und Social-Links -->
     <a href="https://www.amazon.de/s?me=DEIN_AMAZON_SHOP_ID" class="link-button" target="_blank">
       <span class="emoji">🛒</span> Amazon-Shop besuchen
     </a>
@@ -157,20 +167,18 @@
       <span class="emoji">📧</span> Kontakt aufnehmen
     </a>
   </div>
+
   <!-- 🔝 Zurück nach oben Button -->
-<button id="scrollTopBtn" title="Nach oben">🔝</button>
+  <button id="scrollTopBtn" title="Nach oben">🔝</button>
 
-<script>
-  const btn = document.getElementById("scrollTopBtn");
-
-  window.onscroll = function () {
-    btn.style.display = window.scrollY > 200 ? "block" : "none";
-  };
-
-  btn.onclick = function () {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
-</script>
-
+  <script>
+    const btn = document.getElementById("scrollTopBtn");
+    window.onscroll = function () {
+      btn.style.display = window.scrollY > 200 ? "block" : "none";
+    };
+    btn.onclick = function () {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    };
+  </script>
 </body>
 </html>
