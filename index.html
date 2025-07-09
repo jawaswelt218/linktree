@@ -24,53 +24,25 @@
 
   <!-- ✅ Styles -->
   <style>
-    /* Zurück-nach-oben Button */
-    #scrollTopBtn {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      z-index: 99;
-      background-color: var(--primary);
-      color: white;
-      border: none;
-      outline: none;
-      padding: 12px 16px;
-      border-radius: 50%;
-      font-size: 20px;
-      cursor: pointer;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-      display: none;
-      transition: background 0.3s ease;
-    }
-
-    #scrollTopBtn:hover {
-      background-color: var(--button-hover);
-    }
-
-    /* Farbvariablen */
     :root {
       --primary: #4f46e5;
-      --background: #f3f4f6;
-      --container-bg: #ffffff;
-      --text-color: #1f2937;
-      --button-bg: var(--primary);
       --button-hover: #4338ca;
     }
 
-    /* Grundlayout – HIER ist der neue Verlauf */
     body {
       margin: 0;
       padding: 0;
-      background: linear-gradient(to bottom right, #fff5f7, #f0e5ff);
+      background: linear-gradient(to bottom right, #fff3f0, #f6e1ff);
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       display: flex;
       justify-content: center;
       align-items: center;
       min-height: 100vh;
+      transition: background 0.3s ease;
     }
 
     .container {
-      background: var(--container-bg);
+      background: #ffffff;
       padding: 2rem;
       border-radius: 16px;
       box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
@@ -97,7 +69,7 @@
 
     .link-button {
       display: block;
-      background: var(--button-bg);
+      background: var(--primary);
       color: #fff;
       text-decoration: none;
       padding: 1rem;
@@ -117,6 +89,71 @@
       margin-right: 0.5rem;
     }
 
+    #scrollTopBtn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 99;
+      background-color: var(--primary);
+      color: white;
+      border: none;
+      outline: none;
+      padding: 12px 16px;
+      border-radius: 50%;
+      font-size: 20px;
+      cursor: pointer;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+      display: none;
+      transition: background 0.3s ease;
+    }
+
+    #scrollTopBtn:hover {
+      background-color: var(--button-hover);
+    }
+
+    /* 🌙 Dark Mode */
+    body.dark-mode {
+      background: linear-gradient(to bottom right, #1e1e1e, #2a2a2a);
+    }
+
+    body.dark-mode .container {
+      background: #2d2d2d;
+      color: #f3f3f3;
+    }
+
+    body.dark-mode .description {
+      color: #bcbcbc;
+    }
+
+    body.dark-mode .link-button {
+      background: var(--primary);
+    }
+
+    body.dark-mode .link-button:hover {
+      background: var(--button-hover);
+    }
+
+    body.dark-mode #scrollTopBtn {
+      background: var(--primary);
+    }
+
+    body.dark-mode #scrollTopBtn:hover {
+      background: var(--button-hover);
+    }
+
+    /* 🌗 Theme Toggle Button */
+    #themeToggle {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: transparent;
+      border: none;
+      font-size: 24px;
+      cursor: pointer;
+      z-index: 100;
+    }
+
+    /* 📱 Mobile Optimierung */
     @media (max-width: 400px) {
       .profile-pic {
         width: 70vw;
@@ -128,7 +165,6 @@
       }
     }
 
-    /* Einblendanimation */
     @keyframes fadeIn {
       from {
         opacity: 0;
@@ -143,11 +179,14 @@
 </head>
 
 <body>
+  <!-- 🌗 Dark Mode Toggle Button -->
+  <button id="themeToggle" aria-label="Dark Mode">🌙</button>
+
   <div class="container">
     <img src="logo.png" alt="Logo von JawasWelt218" class="profile-pic" />
     <p class="description">Einzigartige 3D-Lithophane, personalisierte Lichtkunst und Fotogeschenke mit Herz</p>
 
-    <!-- Shop- und Social-Links -->
+    <!-- 🔗 Shop- & Social-Links -->
     <a href="https://www.amazon.de/s?me=DEIN_AMAZON_SHOP_ID" class="link-button" target="_blank">
       <span class="emoji">🛒</span> Amazon-Shop besuchen
     </a>
@@ -171,7 +210,9 @@
   <!-- 🔝 Zurück nach oben Button -->
   <button id="scrollTopBtn" title="Nach oben">🔝</button>
 
+  <!-- 🔁 JavaScript für Scroll-Button und Theme -->
   <script>
+    // Zurück-nach-oben-Button
     const btn = document.getElementById("scrollTopBtn");
     window.onscroll = function () {
       btn.style.display = window.scrollY > 200 ? "block" : "none";
@@ -179,6 +220,22 @@
     btn.onclick = function () {
       window.scrollTo({ top: 0, behavior: "smooth" });
     };
+
+    // Dark Mode Umschalter
+    const toggleBtn = document.getElementById("themeToggle");
+    const userTheme = localStorage.getItem("theme");
+
+    if (userTheme === "dark") {
+      document.body.classList.add("dark-mode");
+      toggleBtn.textContent = "☀️";
+    }
+
+    toggleBtn.addEventListener("click", () => {
+      document.body.classList.toggle("dark-mode");
+      const isDark = document.body.classList.contains("dark-mode");
+      toggleBtn.textContent = isDark ? "☀️" : "🌙";
+      localStorage.setItem("theme", isDark ? "dark" : "light");
+    });
   </script>
 </body>
 </html>
