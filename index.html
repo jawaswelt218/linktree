@@ -5,38 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>JawasWelt218 – Personalisierte Lichtkunst & 3D-Fotogeschenke</title>
   <link rel="icon" href="favicon.ico" type="image/x-icon" />
-
-  <!-- SEO & Social Preview -->
-  <meta name="description" content="JawasWelt218 – einzigartige 3D-Lithophane, personalisierte Lichtkunst & Fotogeschenke mit Herz. Jetzt auf Etsy, Amazon & eBay entdecken.">
-  <meta property="og:title" content="JawasWelt218 – Lichtkunst & Fotogeschenke">
-  <meta property="og:description" content="Einzigartige 3D-Lithophane & personalisierte Geschenke mit Herz. Jetzt entdecken.">
-  <meta property="og:image" content="https://jawaswelt218.de/social_preview_jawaswelt218.jpg">
-  <meta property="og:url" content="https://jawaswelt218.de">
-  <meta property="og:type" content="website">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="JawasWelt218 – Lichtkunst & 3D-Geschenke">
-  <meta name="twitter:description" content="Individuelle 3D-Lichtkunst mit Herz. Jetzt im Etsy-, Amazon- oder eBay-Shop stöbern.">
-  <meta name="twitter:image" content="https://jawaswelt218.de/social_preview_jawaswelt218.jpg">
-
   <style>
-    :root {
-      --primary: #4f46e5;
-      --button-hover: #4338ca;
-    }
-
     body {
       margin: 0;
       padding: 0;
       background: linear-gradient(to bottom right, #f8f4ed, #e5e7f9);
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      transition: background 0.3s ease;
-    }
-
-    main {
       display: flex;
       justify-content: center;
       align-items: center;
-      flex-direction: column;
       min-height: 100vh;
     }
 
@@ -48,7 +25,6 @@
       width: 90vw;
       max-width: 420px;
       text-align: center;
-      animation: fadeIn 0.6s ease-out;
     }
 
     .profile-pic {
@@ -66,213 +42,59 @@
       margin-bottom: 2rem;
     }
 
-    .link-heading {
+    .icon-heading {
       font-size: 1.1rem;
       color: #4b5563;
-      margin: 2rem 0 1rem;
+      margin-bottom: 1rem;
       font-weight: 600;
     }
 
-    .link-list {
+    .icon-grid {
       display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-
-    .link-button {
-      background: var(--primary);
-      color: #fff;
-      text-decoration: none;
-      padding: 1rem;
-      border-radius: 12px;
-      font-size: 1rem;
-      font-weight: 500;
-      transition: background 0.3s ease, transform 0.2s ease;
-    }
-
-    .link-button:hover {
-      background: var(--button-hover);
-      transform: scale(1.03);
-    }
-
-    .emoji {
-      margin-right: 0.5rem;
-    }
-
-    .icon-divider {
-      text-align: center;
-      font-size: 1.2rem;
-      color: #d97706;
-      margin: 2.5rem 0 1.5rem;
-      font-weight: 600;
-    }
-
-    .gallery {
-      display: flex;
-      gap: 12px;
       flex-wrap: wrap;
       justify-content: center;
-      margin-top: 1rem;
+      gap: 16px;
+      margin-bottom: 2rem;
     }
 
-    .gallery img {
+    .icon-grid a {
+      display: inline-block;
+      width: 48px;
+      height: 48px;
+    }
+
+    .icon-grid img {
       width: 100%;
-      max-width: 120px;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      height: 100%;
+      object-fit: contain;
       transition: transform 0.3s ease;
-      cursor: pointer;
     }
 
-    .gallery img:hover {
-      transform: scale(1.05);
-    }
-
-    #scrollTopBtn {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      z-index: 99;
-      background-color: var(--primary);
-      color: white;
-      border: none;
-      outline: none;
-      padding: 12px 16px;
-      border-radius: 50%;
-      font-size: 20px;
-      cursor: pointer;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-      display: none;
-      transition: background 0.3s ease;
-    }
-
-    #scrollTopBtn:hover {
-      background-color: var(--button-hover);
-    }
-
-    .lightbox {
-      display: none;
-      position: fixed;
-      z-index: 999;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      background: rgba(0, 0, 0, 0.85);
-      justify-content: center;
-      align-items: center;
-    }
-
-    .lightbox img {
-      max-width: 90vw;
-      max-height: 80vh;
-      border-radius: 12px;
-      box-shadow: 0 0 20px rgba(0,0,0,0.5);
-      animation: zoomIn 0.3s ease;
-    }
-
-    @keyframes zoomIn {
-      from { transform: scale(0.8); opacity: 0; }
-      to { transform: scale(1); opacity: 1; }
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: scale(0.98); }
-      to { opacity: 1; transform: scale(1); }
-    }
-
-    .footer {
-      padding: 1.5rem 1rem;
-      text-align: center;
-      font-size: 0.9rem;
-      color: #6b7280;
-      background: #ffffff20;
-      border-top: 1px solid #d1d5db;
-    }
-
-    .footer a {
-      color: #6b7280;
-      text-decoration: none;
-      margin: 0 0.5rem;
-      transition: color 0.3s ease;
-    }
-
-    .footer a:hover {
-      color: #4f46e5;
-    }
-
-    .footer-note {
-      margin-top: 0.5rem;
-      font-size: 0.8rem;
-      color: #9ca3af;
+    .icon-grid img:hover {
+      transform: scale(1.1);
     }
   </style>
 </head>
 <body>
-  <button id="scrollTopBtn" title="Nach oben">🔝</button>
-  <button id="themeToggle" aria-label="Dark Mode">🌙</button>
-  <main>
-    <div class="container">
-      <img src="logo.png" alt="Logo von JawasWelt218" class="profile-pic" />
-      <p class="description">Einzigartige 3D-Lithophane, personalisierte Lichtkunst und Fotogeschenke mit Herz</p>
+  <div class="container">
+    <img src="logo.png" alt="Logo von JawasWelt218" class="profile-pic" />
+    <p class="description">Einzigartige 3D-Lithophane, personalisierte Lichtkunst und Fotogeschenke mit Herz</p>
 
-      <h2 class="link-heading">Unsere Shops & Social Media</h2>
-      <div class="link-list">
-        <a href="https://www.ebay.de/usr/jawaswelt218" class="link-button" target="_blank"><span class="emoji">💸</span> eBay-Shop besuchen</a>
-        <a href="https://www.etsy.com/de/shop/JawasWelt218" class="link-button" target="_blank"><span class="emoji">🛍️</span> Etsy-Shop besuchen</a>
-        <a href="https://www.instagram.com/jawas_welt218" class="link-button" target="_blank"><span class="emoji">📷</span> Instagram</a>
-        <a href="mailto:info@jawaswelt218.de" class="link-button"><span class="emoji">📧</span> Kontakt aufnehmen</a>
-      </div>
-
-      <div class="icon-divider">✨ Galerie ✨</div>
-      <div class="gallery">
-        <a href="galerie_bild1.jpg" class="lightbox-link"><img src="galerie_bild1.jpg" alt="Hochzeitslicht Lithophane"></a>
-        <a href="galerie_bild2.jpg" class="lightbox-link"><img src="galerie_bild2.jpg" alt="Katzenlicht Lithophane"></a>
-        <a href="galerie_bild3.jpg" class="lightbox-link"><img src="galerie_bild3.jpg" alt="Schlüsselanhänger Lithophane"></a>
-      </div>
+    <h2 class="icon-heading">Shops & Social Media</h2>
+    <div class="icon-grid">
+      <a href="https://www.ebay.de/usr/jawaswelt218" target="_blank">
+        <img src="icons/ebay.svg" alt="eBay">
+      </a>
+      <a href="https://www.etsy.com/de/shop/JawasWelt218" target="_blank">
+        <img src="icons/etsy.svg" alt="Etsy">
+      </a>
+      <a href="https://www.instagram.com/jawas_welt218" target="_blank">
+        <img src="icons/instagram.svg" alt="Instagram">
+      </a>
+      <a href="mailto:info@jawaswelt218.de">
+        <img src="icons/mail.svg" alt="E-Mail">
+      </a>
     </div>
-  </main>
-
-  <div id="lightbox" class="lightbox">
-    <img id="lightbox-img" src="" alt="Großansicht" />
   </div>
-
-  <footer class="footer">
-    <p><a href="/impressum.html">Impressum</a> | <a href="/datenschutz.html">Datenschutz</a></p>
-    <p class="footer-note">© 2025 JawasWelt218 – Alle Rechte vorbehalten</p>
-  </footer>
-
-  <script>
-    // Scroll-Button
-    const btn = document.getElementById("scrollTopBtn");
-    window.onscroll = () => btn.style.display = window.scrollY > 200 ? "block" : "none";
-    btn.onclick = () => window.scrollTo({ top: 0, behavior: "smooth" });
-
-    // Dark Mode
-    const toggleBtn = document.getElementById("themeToggle");
-    const userTheme = localStorage.getItem("theme");
-    if (userTheme === "dark") {
-      document.body.classList.add("dark-mode");
-      toggleBtn.textContent = "☀️";
-    }
-    toggleBtn.addEventListener("click", () => {
-      document.body.classList.toggle("dark-mode");
-      const isDark = document.body.classList.contains("dark-mode");
-      toggleBtn.textContent = isDark ? "☀️" : "🌙";
-      localStorage.setItem("theme", isDark ? "dark" : "light");
-    });
-
-    // Lightbox
-    const lightbox = document.getElementById("lightbox");
-    const lightboxImg = document.getElementById("lightbox-img");
-    document.querySelectorAll(".lightbox-link").forEach(link => {
-      link.addEventListener("click", function (e) {
-        e.preventDefault();
-        lightboxImg.src = this.href;
-        lightbox.style.display = "flex";
-      });
-    });
-    lightbox.addEventListener("click", () => lightbox.style.display = "none");
-  </script>
 </body>
 </html>
