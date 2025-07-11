@@ -5,7 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>JawasWelt218 – Personalisierte Lichtkunst & 3D-Fotogeschenke</title>
   <link rel="icon" href="favicon.ico" type="image/x-icon" />
+
+  <!-- SEO & Social Preview -->
   <meta name="description" content="JawasWelt218 – einzigartige 3D-Lithophane, personalisierte Lichtkunst & Fotogeschenke mit Herz. Jetzt auf Etsy, Amazon & eBay entdecken.">
+  <meta property="og:title" content="JawasWelt218 – Lichtkunst & Fotogeschenke">
+  <meta property="og:description" content="Einzigartige 3D-Lithophane & personalisierte Geschenke mit Herz. Jetzt entdecken.">
+  <meta property="og:image" content="https://jawaswelt218.de/social_preview_jawaswelt218.jpg">
+  <meta property="og:url" content="https://jawaswelt218.de">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="JawasWelt218 – Lichtkunst & 3D-Geschenke">
+  <meta name="twitter:description" content="Individuelle 3D-Lichtkunst mit Herz. Jetzt im Etsy-, Amazon- oder eBay-Shop stöbern.">
+  <meta name="twitter:image" content="https://jawaswelt218.de/social_preview_jawaswelt218.jpg">
+
   <style>
     :root {
       --primary: #4f46e5;
@@ -31,6 +43,7 @@
       width: 90vw;
       max-width: 420px;
       text-align: center;
+      animation: fadeIn 0.6s ease-out;
     }
 
     .profile-pic {
@@ -55,15 +68,14 @@
     }
 
     .icon-links a {
-      background: white;
+      background: #f2f2f2;
+      border-radius: 50%;
       padding: 10px;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
       display: flex;
       align-items: center;
       justify-content: center;
-      width: 56px;
-      height: 56px;
+      width: 64px;
+      height: 64px;
       transition: transform 0.3s ease;
     }
 
@@ -71,9 +83,9 @@
       transform: scale(1.1);
     }
 
-    .icon-links img {
-      width: 32px;
-      height: 32px;
+    .icon-links a img {
+      width: 36px;
+      height: 36px;
       object-fit: contain;
     }
 
@@ -81,7 +93,7 @@
       text-align: center;
       font-size: 1.2rem;
       color: #d97706;
-      margin: 1.5rem 0 1.2rem;
+      margin: 2rem 0 1.2rem;
       font-weight: 600;
     }
 
@@ -105,6 +117,47 @@
       transform: scale(1.05);
     }
 
+    #scrollTopBtn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 99;
+      background-color: var(--primary);
+      color: white;
+      border: none;
+      outline: none;
+      padding: 12px 16px;
+      border-radius: 50%;
+      font-size: 20px;
+      cursor: pointer;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+      display: none;
+    }
+
+    #scrollTopBtn:hover {
+      background-color: var(--button-hover);
+    }
+
+    .lightbox {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.85);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .lightbox img {
+      max-width: 90vw;
+      max-height: 80vh;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    }
+
     .footer {
       margin-top: auto;
       padding: 1.5rem 1rem;
@@ -122,7 +175,7 @@
     }
 
     .footer a:hover {
-      color: var(--primary);
+      color: #4f46e5;
     }
 
     .footer-note {
@@ -133,9 +186,14 @@
 
     @media (max-width: 400px) {
       .profile-pic { width: 70vw; }
-      .icon-links a { width: 48px; height: 48px; padding: 8px; }
-      .icon-links img { width: 28px; height: 28px; }
+      .icon-links a { width: 56px; height: 56px; }
+      .icon-links a img { width: 32px; height: 32px; }
       .gallery img { max-width: 100px; }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.98); }
+      to { opacity: 1; transform: scale(1); }
     }
   </style>
 </head>
@@ -154,16 +212,50 @@
 
     <div class="icon-divider">✨ Galerie ✨</div>
     <div class="gallery">
-      <a href="galerie_bild1.jpg"><img src="galerie_bild1.jpg" alt="Bild 1"></a>
-      <a href="galerie_bild2.jpg"><img src="galerie_bild2.jpg" alt="Bild 2"></a>
-      <a href="galerie_bild3.jpg"><img src="galerie_bild3.jpg" alt="Bild 3"></a>
+      <a href="galerie_bild1.jpg" class="lightbox-link"><img src="galerie_bild1.jpg" alt="Bild 1"></a>
+      <a href="galerie_bild2.jpg" class="lightbox-link"><img src="galerie_bild2.jpg" alt="Bild 2"></a>
+      <a href="galerie_bild3.jpg" class="lightbox-link"><img src="galerie_bild3.jpg" alt="Bild 3"></a>
     </div>
   </div>
 
+  <!-- Scroll to top -->
+  <button id="scrollTopBtn" title="Nach oben">🔝</button>
+
+  <!-- Lightbox -->
+  <div id="lightbox" class="lightbox">
+    <img id="lightbox-img" src="" alt="Großansicht">
+  </div>
+
+  <!-- Footer -->
   <footer class="footer">
     <p><a href="/impressum.html">Impressum</a> | <a href="/datenschutz.html">Datenschutz</a></p>
     <p class="footer-note">© 2025 JawasWelt218 – Alle Rechte vorbehalten</p>
   </footer>
+
+  <script>
+    // Scroll-Button
+    const btn = document.getElementById("scrollTopBtn");
+    window.onscroll = () => {
+      btn.style.display = window.scrollY > 200 ? "block" : "none";
+    };
+    btn.onclick = () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    };
+
+    // Lightbox
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.getElementById("lightbox-img");
+    document.querySelectorAll(".lightbox-link").forEach(link => {
+      link.addEventListener("click", function (e) {
+        e.preventDefault();
+        lightboxImg.src = this.href;
+        lightbox.style.display = "flex";
+      });
+    });
+    lightbox.addEventListener("click", () => {
+      lightbox.style.display = "none";
+    });
+  </script>
 
 </body>
 </html>
