@@ -31,13 +31,25 @@
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       display: flex;
       flex-direction: column;
+      align-items: center;
       min-height: 100vh;
+    }
+
+    #themeToggle {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: transparent;
+      border: none;
+      font-size: 24px;
+      cursor: pointer;
+      z-index: 100;
     }
 
     .container {
       background: #ffffff;
       padding: 2rem;
-      margin: 2rem auto;
+      margin: 2rem 0;
       border-radius: 16px;
       box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
       width: 90vw;
@@ -68,14 +80,15 @@
     }
 
     .icon-links a {
-      background: #f2f2f2;
+      background: #f3f3f3;
+      padding: 12px;
       border-radius: 50%;
-      padding: 10px;
       display: flex;
-      align-items: center;
       justify-content: center;
+      align-items: center;
       width: 64px;
       height: 64px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
       transition: transform 0.3s ease;
     }
 
@@ -84,9 +97,15 @@
     }
 
     .icon-links a img {
-      width: 36px;
-      height: 36px;
+      width: 32px;
+      height: 32px;
       object-fit: contain;
+    }
+
+    /* Größere Darstellung für kleine Logos */
+    .icon-links a.ebay img,
+    .icon-links a.etsy img {
+      transform: scale(1.4);
     }
 
     .icon-divider {
@@ -117,27 +136,6 @@
       transform: scale(1.05);
     }
 
-    #scrollTopBtn {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      z-index: 99;
-      background-color: var(--primary);
-      color: white;
-      border: none;
-      outline: none;
-      padding: 12px 16px;
-      border-radius: 50%;
-      font-size: 20px;
-      cursor: pointer;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-      display: none;
-    }
-
-    #scrollTopBtn:hover {
-      background-color: var(--button-hover);
-    }
-
     .lightbox {
       display: none;
       position: fixed;
@@ -166,6 +164,8 @@
       color: #6b7280;
       background: #ffffff20;
       border-top: 1px solid #d1d5db;
+      border-radius: 0 0 16px 16px;
+      width: 100%;
     }
 
     .footer a {
@@ -187,7 +187,7 @@
     @media (max-width: 400px) {
       .profile-pic { width: 70vw; }
       .icon-links a { width: 56px; height: 56px; }
-      .icon-links a img { width: 32px; height: 32px; }
+      .icon-links a img { width: 28px; height: 28px; }
       .gallery img { max-width: 100px; }
     }
 
@@ -195,19 +195,49 @@
       from { opacity: 0; transform: scale(0.98); }
       to { opacity: 1; transform: scale(1); }
     }
+
+    /* Dark Mode */
+    body.dark-mode {
+      background: linear-gradient(to bottom right, #1e1e1e, #2a2a2a);
+    }
+
+    body.dark-mode .container {
+      background: #2d2d2d;
+      color: #f3f3f3;
+    }
+
+    body.dark-mode .description {
+      color: #bcbcbc;
+    }
+
+    body.dark-mode .footer {
+      background: #1a1a1a;
+      border-color: #333;
+      color: #aaa;
+    }
+
+    body.dark-mode .footer a {
+      color: #aaa;
+    }
+
+    body.dark-mode .footer a:hover {
+      color: #fff;
+    }
   </style>
 </head>
 <body>
+  <!-- Dark Mode Umschalter -->
+  <button id="themeToggle" aria-label="Dark Mode">🌙</button>
 
   <div class="container">
     <img src="logo.png" alt="Logo von JawasWelt218" class="profile-pic" />
     <p class="description">Einzigartige 3D-Lithophane, personalisierte Lichtkunst und Fotogeschenke mit Herz</p>
 
     <div class="icon-links">
-      <a href="https://www.ebay.de/usr/jawaswelt218" target="_blank"><img src="icon_ebay.png" alt="eBay"></a>
-      <a href="https://www.etsy.com/de/shop/JawasWelt218" target="_blank"><img src="icon_etsy.png" alt="Etsy"></a>
+      <a href="https://www.ebay.de/usr/jawaswelt218" target="_blank" class="ebay"><img src="icon_ebay.png" alt="eBay"></a>
+      <a href="https://www.etsy.com/de/shop/JawasWelt218" target="_blank" class="etsy"><img src="icon_etsy.png" alt="Etsy"></a>
       <a href="https://www.instagram.com/jawas_welt218" target="_blank"><img src="icon_instagram.png" alt="Instagram"></a>
-      <a href="mailto:info@jawaswelt218.de"><img src="icon_email.png" alt="E-Mail"></a>
+      <a href="mailto:info@jawaswelt218.de"><img src="icon_email.png" alt="Mail"></a>
     </div>
 
     <div class="icon-divider">✨ Galerie ✨</div>
@@ -217,9 +247,6 @@
       <a href="galerie_bild3.jpg" class="lightbox-link"><img src="galerie_bild3.jpg" alt="Bild 3"></a>
     </div>
   </div>
-
-  <!-- Scroll to top -->
-  <button id="scrollTopBtn" title="Nach oben">🔝</button>
 
   <!-- Lightbox -->
   <div id="lightbox" class="lightbox">
@@ -233,14 +260,20 @@
   </footer>
 
   <script>
-    // Scroll-Button
-    const btn = document.getElementById("scrollTopBtn");
-    window.onscroll = () => {
-      btn.style.display = window.scrollY > 200 ? "block" : "none";
-    };
-    btn.onclick = () => {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    };
+    // Dark Mode Toggle
+    const toggleBtn = document.getElementById("themeToggle");
+    const userTheme = localStorage.getItem("theme");
+    if (userTheme === "dark") {
+      document.body.classList.add("dark-mode");
+      toggleBtn.textContent = "☀️";
+    }
+
+    toggleBtn.addEventListener("click", () => {
+      document.body.classList.toggle("dark-mode");
+      const isDark = document.body.classList.contains("dark-mode");
+      toggleBtn.textContent = isDark ? "☀️" : "🌙";
+      localStorage.setItem("theme", isDark ? "dark" : "light");
+    });
 
     // Lightbox
     const lightbox = document.getElementById("lightbox");
@@ -256,6 +289,5 @@
       lightbox.style.display = "none";
     });
   </script>
-
 </body>
 </html>
