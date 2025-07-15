@@ -4,13 +4,16 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Widerrufsbelehrung – JawasWelt218</title>
-  <link rel="icon" href="favicon.ico" type="image/x-icon" />
   <link rel="stylesheet" href="/style.css" />
-
+  <link rel="icon" href="/favicon.ico" type="image/x-icon" />
 </head>
 <body>
+
+  <!-- Dark Mode Umschalter -->
+  <button id="themeToggle" aria-label="Dark Mode">🌙</button>
+
   <div class="container">
-    <h1>Widerrufsbelehrung</h1>
+    <h1 style="margin-top: 0;">Widerrufsbelehrung</h1>
 
     <p><strong>Hinweis:</strong> Der Verkauf unserer Produkte erfolgt ausschließlich über externe Plattformen wie Etsy, eBay und Amazon. Die Widerrufsbedingungen richten sich nach den jeweiligen Plattformrichtlinien.</p>
 
@@ -23,14 +26,32 @@
     <ul>
       <li><a href="https://www.etsy.com/de/shop/JawasWelt218" target="_blank">Etsy-Shop von JawasWelt218</a></li>
       <li><a href="https://www.ebay.de/usr/jawaswelt218" target="_blank">eBay-Shop von JawasWelt218</a></li>
-      <!-- Optional: <li><a href="https://www.amazon.de/s?me=DEINE_SHOP_ID" target="_blank">Amazon-Shop von JawasWelt218</a></li> -->
     </ul>
 
     <p>Bei Fragen zum Widerruf oder Rückgabe helfen wir gerne per E-Mail weiter: <a href="mailto:info@jawaswelt218.de">info@jawaswelt218.de</a></p>
+
+    <div class="back-home">
+      <a href="/" class="back-button">← Zur Startseite</a>
+    </div>
   </div>
 
-   <!-- Footer -->
   <div id="footer-placeholder"></div>
   <script src="/footer.js"></script>
+
+  <script>
+    const toggleBtn = document.getElementById("themeToggle");
+    const userTheme = localStorage.getItem("theme");
+    if (userTheme === "dark") {
+      document.body.classList.add("dark-mode");
+      toggleBtn.textContent = "☀️";
+    }
+
+    toggleBtn.addEventListener("click", () => {
+      document.body.classList.toggle("dark-mode");
+      const isDark = document.body.classList.contains("dark-mode");
+      toggleBtn.textContent = isDark ? "☀️" : "🌙";
+      localStorage.setItem("theme", isDark ? "dark" : "light");
+    });
+  </script>
 </body>
 </html>
