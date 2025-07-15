@@ -207,4 +207,26 @@
     body.dark-mode .footer a:hover {
       color: #fff;
     }
+    .back-home {
+      margin-top: 2.5rem;
+      text-align: center;
+    }
+
+    .back-button {
+      background-color: var(--primary);
+      color: white;
+      padding: 12px 20px;
+      border-radius: 8px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      display: inline-block;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    }
+
+    .back-button:hover {
+      background-color: var(--button-hover);
+      transform: scale(1.05);
+    }
+
   </style>
