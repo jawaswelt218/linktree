@@ -1,70 +1,32 @@
+<!-- ✅ impressum.html -->
 <!DOCTYPE html>
 <html lang="de">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Impressum – JawasWelt218</title>
-  <link rel="icon" href="/favicon.ico" type="image/x-icon" />
   <link rel="stylesheet" href="/style.css" />
+  <link rel="icon" href="/favicon.ico" type="image/x-icon" />
 </head>
 <body>
-
-  <!-- Dark Mode Umschalter -->
   <button id="themeToggle" aria-label="Dark Mode">🌙</button>
-
+  <div class="cookie-banner" id="cookieBanner">
+    <p>Diese Website verwendet Cookies. <a href="/datenschutz.html">Mehr erfahren</a></p>
+    <button id="cookieAccept">Verstanden</button>
+  </div>
   <div class="container">
-    <h1 style="margin-top: 0;">Impressum</h1>
-
+    <h1>Impressum</h1>
     <p>Angaben gemäß § 5 TMG:</p>
-
-    <p>
-      Janine Markwart<br>
-      JawasWelt218<br>
-      Weseraue 24<br>
-      32469 Petershagen 
-    </p>
-
-    <p>
-      Telefon: 015146195007<br>
-      E-Mail: <a href="mailto:info@jawaswelt218.de">info@jawaswelt218.de</a>
-    </p>
-
-    <p>
-      Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV:<br>
-      Waldemar Markwart, Weseraue 24, 32469 Petershagen 
-    </p>
-
-    <p>
-      Plattform der EU-Kommission zur Online-Streitbeilegung (OS):<br>
-      <a href="https://ec.europa.eu/consumers/odr" target="_blank">https://ec.europa.eu/consumers/odr</a>
-    </p>
-
-    <!-- Zurück zur Startseite Button -->
+    <p>Janine Markwart<br>JawasWelt218<br>Weseraue 24<br>32469 Petershagen</p>
+    <p>Telefon: 015146195007<br>E-Mail: <a href="mailto:info@jawaswelt218.de">info@jawaswelt218.de</a></p>
+    <p>Verantwortlich gemäß § 55 Abs. 2 RStV:<br>Waldemar Markwart, Weseraue 24</p>
+    <p>Online-Streitbeilegung: <a href="https://ec.europa.eu/consumers/odr" target="_blank">https://ec.europa.eu/consumers/odr</a></p>
     <div class="back-home">
       <a href="/" class="back-button">← Zur Startseite</a>
     </div>
   </div>
-
-  <!-- Footer -->
   <div id="footer-placeholder"></div>
   <script src="/footer.js"></script>
-
-  <!-- Dark Mode Toggle Script -->
-  <script>
-    const toggleBtn = document.getElementById("themeToggle");
-    const userTheme = localStorage.getItem("theme");
-    if (userTheme === "dark") {
-      document.body.classList.add("dark-mode");
-      toggleBtn.textContent = "☀️";
-    }
-
-    toggleBtn.addEventListener("click", () => {
-      document.body.classList.toggle("dark-mode");
-      const isDark = document.body.classList.contains("dark-mode");
-      toggleBtn.textContent = isDark ? "☀️" : "🌙";
-      localStorage.setItem("theme", isDark ? "dark" : "light");
-    });
-  </script>
-
+  <script src="/script.js"></script>
 </body>
 </html>
