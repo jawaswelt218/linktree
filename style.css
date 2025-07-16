@@ -1,240 +1,47 @@
-:root {
-  --primary: #4f46e5;
-  --button-hover: #4338ca;
-}
+<style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 2rem;
+      background: linear-gradient(to bottom right, #f8f4ed, #e5e7f9);
+      color: #333;
+    }
 
-/* ==== Body Grundlayout ==== */
-body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(to bottom right, #f8f4ed, #e5e7f9);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  min-height: 100vh;
-}
+    .container {
+      max-width: 800px;
+      margin: auto;
+      background: #fff;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
 
-/* ==== Dark Mode Toggle Button ==== */
-#themeToggle {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  background: transparent;
-  border: none;
-  font-size: 24px;
-  cursor: pointer;
-  z-index: 100;
-}
+    h1 {
+      color: #4f46e5;
+      margin-bottom: 1rem;
+    }
 
-/* ==== Hauptcontainer ==== */
-.container {
-  background: #ffffff;
-  padding: 2rem;
-  margin: 2rem 0;
-  border-radius: 16px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-  width: 90vw;
-  max-width: 420px;
-  text-align: center;
-  animation: fadeIn 0.6s ease-out;
-}
+    p {
+      line-height: 1.6;
+    }
 
-/* ==== Logo ==== */
-.profile-pic {
-  width: 60vw;
-  max-width: 220px;
-  height: auto;
-  margin-bottom: 1.5rem;
-}
+    ul {
+      margin-left: 1.5rem;
+    }
 
-/* ==== Beschreibungstext ==== */
-.description {
-  font-size: 1rem;
-  color: #6b7280;
-  margin-bottom: 2rem;
-}
+    a {
+      color: #4f46e5;
+      text-decoration: none;
+    }
 
-/* ==== Icon-Links zu Shops ==== */
-.icon-links {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 16px;
-  margin-bottom: 2rem;
-}
+    a:hover {
+      text-decoration: underline;
+    }
 
-.icon-links a {
-  background: #f3f3f3;
-  padding: 12px;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 64px;
-  height: 64px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
-}
-
-.icon-links a:hover {
-  transform: scale(1.1);
-}
-
-.icon-links a img {
-  width: 32px;
-  height: 32px;
-  object-fit: contain;
-}
-
-/* ==== Fix für kleine Icons ==== */
-.icon-links a.ebay img {
-  width: 48px;
-  height: auto;
-}
-
-.icon-links a.etsy img {
-  width: 48px;
-  height: auto;
-}
-
-/* ==== Galerie-Überschrift ==== */
-.icon-divider {
-  text-align: center;
-  font-size: 1.2rem;
-  color: #d97706;
-  margin: 2rem 0 1.2rem;
-  font-weight: 600;
-}
-
-/* ==== Galerie-Bilder ==== */
-.gallery {
-  display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.gallery img {
-  width: 100%;
-  max-width: 120px;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
-  cursor: pointer;
-}
-
-.gallery img:hover {
-  transform: scale(1.05);
-}
-
-/* ==== Lightbox ==== */
-.lightbox {
-  display: none;
-  position: fixed;
-  z-index: 999;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: rgba(0, 0, 0, 0.85);
-  justify-content: center;
-  align-items: center;
-}
-
-.lightbox img {
-  max-width: 90vw;
-  max-height: 80vh;
-  border-radius: 12px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-}
-
-/* ==== Footer ==== */
-.footer {
-  margin-top: auto;
-  padding: 1.5rem 1rem;
-  text-align: center;
-  font-size: 0.9rem;
-  color: #6b7280;
-  background: #ffffff20;
-  border-top: 1px solid #d1d5db;
-  border-radius: 0 0 16px 16px;
-  width: 100%;
-}
-
-.footer a {
-  color: #6b7280;
-  text-decoration: none;
-  margin: 0 0.5rem;
-}
-
-.footer a:hover {
-  color: var(--primary);
-}
-
-.footer-note {
-  margin-top: 0.5rem;
-  font-size: 0.8rem;
-  color: #9ca3af;
-}
-
-/* ==== Mobile Optimierung ==== */
-@media (max-width: 400px) {
-  .profile-pic {
-    width: 70vw;
-  }
-
-  .icon-links a {
-    width: 56px;
-    height: 56px;
-  }
-
-  .icon-links a img {
-    width: 28px;
-    height: 28px;
-  }
-
-  .gallery img {
-    max-width: 100px;
-  }
-}
-
-/* ==== Fade-in Effekt ==== */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: scale(0.98);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-/* ==== Dark Mode ==== */
-body.dark-mode {
-  background: linear-gradient(to bottom right, #1e1e1e, #2a2a2a);
-}
-
-body.dark-mode .container {
-  background: #2d2d2d;
-  color: #f3f3f3;
-}
-
-body.dark-mode .description {
-  color: #bcbcbc;
-}
-
-body.dark-mode .footer {
-  background: #1a1a1a;
-  border-color: #333;
-  color: #aaa;
-}
-
-body.dark-mode .footer a {
-  color: #aaa;
-}
-
-body.dark-mode .footer a:hover {
-  color: #fff;
-}
+    footer {
+      text-align: center;
+      margin-top: 3rem;
+      font-size: 0.9rem;
+      color: #888;
+    }
+  </style>

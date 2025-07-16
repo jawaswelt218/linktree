@@ -1,32 +1,84 @@
-<!-- ✅ impressum.html -->
 <!DOCTYPE html>
 <html lang="de">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Impressum – JawasWelt218</title>
-  <link rel="stylesheet" href="/style.css" />
-  <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+  <style>
+    body {
+      font-family: sans-serif;
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 1rem;
+      line-height: 1.6;
+      background: #f8f4ed;
+      color: #1f2937;
+    }
+
+    h1 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+    }
+
+    .footer {
+      margin-top: 3rem;
+      padding: 1.5rem 1rem;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #6b7280;
+      background: #ffffff20;
+      border-top: 1px solid #d1d5db;
+      border-radius: 0 0 16px 16px;
+    }
+
+    .footer a {
+      color: #6b7280;
+      text-decoration: none;
+      margin: 0 0.5rem;
+      transition: color 0.3s ease;
+    }
+
+    .footer a:hover {
+      color: #4f46e5;
+    }
+
+    .footer-note {
+      margin-top: 0.5rem;
+      font-size: 0.8rem;
+      color: #9ca3af;
+    }
+  </style>
 </head>
 <body>
-  <button id="themeToggle" aria-label="Dark Mode">🌙</button>
-  <div class="cookie-banner" id="cookieBanner">
-    <p>Diese Website verwendet Cookies. <a href="/datenschutz.html">Mehr erfahren</a></p>
-    <button id="cookieAccept">Verstanden</button>
-  </div>
-  <div class="container">
-    <h1>Impressum</h1>
-    <p>Angaben gemäß § 5 TMG:</p>
-    <p>Janine Markwart<br>JawasWelt218<br>Weseraue 24<br>32469 Petershagen</p>
-    <p>Telefon: 015146195007<br>E-Mail: <a href="mailto:info@jawaswelt218.de">info@jawaswelt218.de</a></p>
-    <p>Verantwortlich gemäß § 55 Abs. 2 RStV:<br>Waldemar Markwart, Weseraue 24</p>
-    <p>Online-Streitbeilegung: <a href="https://ec.europa.eu/consumers/odr" target="_blank">https://ec.europa.eu/consumers/odr</a></p>
-    <div class="back-home">
-      <a href="/" class="back-button">← Zur Startseite</a>
-    </div>
-  </div>
-  <div id="footer-placeholder"></div>
-  <script src="/footer.js"></script>
-  <script src="/script.js"></script>
+  <h1>Impressum</h1>
+  <p>Angaben gemäß § 5 TMG:</p>
+
+  <p>
+    Janine Markwart<br>
+    JawasWelt218<br>
+    Weseraue 24<br>
+    32469 Petershagen 
+  </p>
+
+  <p>
+    Telefon: 015146195007<br>
+    E-Mail: info@jawaswelt218.de
+  </p>
+
+  <p>
+    Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV:<br>
+    Waldemar Markwart, Weseraue 24, 32469 Petershagen 
+  </p>
+
+  <p>
+    Plattform der EU-Kommission zur Online-Streitbeilegung (OS):<br>
+    <a href="https://ec.europa.eu/consumers/odr" target="_blank">https://ec.europa.eu/consumers/odr</a>
+  </p>
+
+   <!-- Footer -->
+  <footer class="footer">
+    <p><a href="/impressum.html">Impressum</a> | <a href="/datenschutz.html">Datenschutz</a> | <a href="/widerrufsbelehrung.html">Widerrufsbelehrung</a></p>
+    <p class="footer-note">© 2025 JawasWelt218 – Alle Rechte vorbehalten</p>
+  </footer
 </body>
 </html>

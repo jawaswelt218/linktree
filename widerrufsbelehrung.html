@@ -4,16 +4,58 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Widerrufsbelehrung – JawasWelt218</title>
-  <link rel="stylesheet" href="/style.css" />
-  <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 2rem;
+      background: linear-gradient(to bottom right, #f8f4ed, #e5e7f9);
+      color: #333;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: auto;
+      background: #fff;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+      color: #4f46e5;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      line-height: 1.6;
+    }
+
+    ul {
+      margin-left: 1.5rem;
+    }
+
+    a {
+      color: #4f46e5;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 3rem;
+      font-size: 0.9rem;
+      color: #888;
+    }
+  </style>
 </head>
 <body>
-
-  <!-- Dark Mode Umschalter -->
-  <button id="themeToggle" aria-label="Dark Mode">🌙</button>
-
   <div class="container">
-    <h1 style="margin-top: 0;">Widerrufsbelehrung</h1>
+    <h1>Widerrufsbelehrung</h1>
 
     <p><strong>Hinweis:</strong> Der Verkauf unserer Produkte erfolgt ausschließlich über externe Plattformen wie Etsy, eBay und Amazon. Die Widerrufsbedingungen richten sich nach den jeweiligen Plattformrichtlinien.</p>
 
@@ -26,32 +68,16 @@
     <ul>
       <li><a href="https://www.etsy.com/de/shop/JawasWelt218" target="_blank">Etsy-Shop von JawasWelt218</a></li>
       <li><a href="https://www.ebay.de/usr/jawaswelt218" target="_blank">eBay-Shop von JawasWelt218</a></li>
+      <!-- Optional: <li><a href="https://www.amazon.de/s?me=DEINE_SHOP_ID" target="_blank">Amazon-Shop von JawasWelt218</a></li> -->
     </ul>
 
     <p>Bei Fragen zum Widerruf oder Rückgabe helfen wir gerne per E-Mail weiter: <a href="mailto:info@jawaswelt218.de">info@jawaswelt218.de</a></p>
-
-    <div class="back-home">
-      <a href="/" class="back-button">← Zur Startseite</a>
-    </div>
   </div>
 
-  <div id="footer-placeholder"></div>
-  <script src="/footer.js"></script>
-
-  <script>
-    const toggleBtn = document.getElementById("themeToggle");
-    const userTheme = localStorage.getItem("theme");
-    if (userTheme === "dark") {
-      document.body.classList.add("dark-mode");
-      toggleBtn.textContent = "☀️";
-    }
-
-    toggleBtn.addEventListener("click", () => {
-      document.body.classList.toggle("dark-mode");
-      const isDark = document.body.classList.contains("dark-mode");
-      toggleBtn.textContent = isDark ? "☀️" : "🌙";
-      localStorage.setItem("theme", isDark ? "dark" : "light");
-    });
-  </script>
+   <!-- Footer -->
+  <footer class="footer">
+    <p><a href="/impressum.html">Impressum</a> | <a href="/datenschutz.html">Datenschutz</a> | <a href="/widerrufsbelehrung.html">Widerrufsbelehrung</a></p>
+    <p class="footer-note">© 2025 JawasWelt218 – Alle Rechte vorbehalten</p>
+  </footer
 </body>
 </html>
