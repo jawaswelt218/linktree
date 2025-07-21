@@ -4,84 +4,100 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Datenschutzerklärung – JawasWelt218</title>
-  <style>
-    body {
-      font-family: sans-serif;
-      max-width: 800px;
-      margin: 2rem auto;
-      padding: 1rem;
-      line-height: 1.6;
-      background: #f8f4ed;
-      color: #1f2937;
-    }
-
-    h1 {
-      font-size: 1.8rem;
-      margin-bottom: 1rem;
-    }
-
-    .footer {
-      margin-top: 3rem;
-      padding: 1.5rem 1rem;
-      text-align: center;
-      font-size: 0.9rem;
-      color: #6b7280;
-      background: #ffffff20;
-      border-top: 1px solid #d1d5db;
-      border-radius: 0 0 16px 16px;
-    }
-
-    .footer a {
-      color: #6b7280;
-      text-decoration: none;
-      margin: 0 0.5rem;
-      transition: color 0.3s ease;
-    }
-
-    .footer a:hover {
-      color: #4f46e5;
-    }
-
-    .footer-note {
-      margin-top: 0.5rem;
-      font-size: 0.8rem;
-      color: #9ca3af;
-    }
-  </style>
+  <link rel="stylesheet" href="/style.css" />
+  <link rel="icon" href="/favicon.ico" type="image/x-icon" />
 </head>
 <body>
-  <h1>Datenschutzerklärung</h1>
-  <p>
-    Der Schutz Ihrer persönlichen Daten ist uns ein besonderes Anliegen.
-    Wir verarbeiten Ihre Daten daher ausschließlich auf Grundlage der gesetzlichen Bestimmungen (DSGVO, TMG).
-  </p>
 
-  <h2>1. Kontaktaufnahme</h2>
-  <p>
-    Wenn Sie per E-Mail Kontakt mit uns aufnehmen, werden Ihre angegebenen Daten zwecks Bearbeitung der Anfrage gespeichert. Diese Daten geben wir nicht ohne Ihre Einwilligung weiter.
-  </p>
+  <!-- Dark Mode Umschalter -->
+  <button id="themeToggle" aria-label="Dark Mode">🌙</button>
 
-  <h2>2. Server-Logfiles</h2>
-  <p>
-    Beim Besuch dieser Website werden automatisch Daten (z. B. IP-Adresse, Browsertyp, Betriebssystem) durch unseren Hostinganbieter (GitHub Pages / IONOS) gespeichert.
-  </p>
+  <div class="container">
+    <h1 style="margin-top: 0;">Datenschutzerklärung</h1>
 
-  <h2>3. Externe Links</h2>
-  <p>
-    Diese Website enthält Links zu externen Plattformen wie Etsy, Amazon, eBay, Instagram und Facebook. Für deren Inhalte und Datenschutzbestimmungen übernehmen wir keine Haftung.
-  </p>
+    <p>
+      Der Schutz Ihrer persönlichen Daten ist uns ein besonderes Anliegen.
+      Wir verarbeiten Ihre Daten daher ausschließlich auf Grundlage der gesetzlichen Bestimmungen (DSGVO, TMG).
+    </p>
 
-  <h2>4. Ihre Rechte</h2>
-  <p>
-    Sie haben das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung, Datenübertragbarkeit und Widerspruch. Bei Fragen wenden Sie sich an: <strong>info@jawaswelt218.de</strong>
-  </p>
+    <h2>1. Kontaktaufnahme</h2>
+    <p>
+      Wenn Sie per E-Mail Kontakt mit uns aufnehmen, werden Ihre angegebenen Daten zwecks Bearbeitung der Anfrage gespeichert. Diese Daten geben wir nicht ohne Ihre Einwilligung weiter.
+    </p>
 
-  <p>Stand: Juli 2025</p>
+    <h2>2. Server-Logfiles</h2>
+    <p>
+      Beim Besuch dieser Website werden automatisch Daten (z. B. IP-Adresse, Browsertyp, Betriebssystem) durch unseren Hostinganbieter (GitHub Pages / IONOS) gespeichert.
+    </p>
 
-   <!-- Footer -->
-  <footer class="footer">
-    <p><a href="/impressum.html">Impressum</a> | <a href="/datenschutz.html">Datenschutz</a> | <a href="/widerrufsbelehrung.html">Widerrufsbelehrung</a></p>
-    <p class="footer-note">© 2025 JawasWelt218 – Alle Rechte vorbehalten</p>
-  </footer
+    <h2>3. Externe Links</h2>
+    <p>
+      Diese Website enthält Links zu externen Plattformen wie Etsy, Amazon, eBay, Instagram und Facebook. Für deren Inhalte und Datenschutzbestimmungen übernehmen wir keine Haftung.
+    </p>
+
+    <h2>4. Ihre Rechte</h2>
+    <p>
+      Sie haben das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung, Datenübertragbarkeit und Widerspruch. Bei Fragen wenden Sie sich an: <strong>info@jawaswelt218.de</strong>
+    </p>
+
+    <p>Stand: Juli 2025</p>
+
+    <div class="back-home">
+      <a href="/" class="back-button">← Zur Startseite</a>
+    </div>
+  </div>
+
+  <div id="footer-placeholder"></div>
+  <script src="/footer.js"></script>
+
+  <script>
+    const toggleBtn = document.getElementById("themeToggle");
+    const userTheme = localStorage.getItem("theme");
+    if (userTheme === "dark") {
+      document.body.classList.add("dark-mode");
+      toggleBtn.textContent = "☀️";
+    }
+
+    toggleBtn.addEventListener("click", () => {
+      document.body.classList.toggle("dark-mode");
+      const isDark = document.body.classList.contains("dark-mode");
+      toggleBtn.textContent = isDark ? "☀️" : "🌙";
+      localStorage.setItem("theme", isDark ? "dark" : "light");
+    });
+  </script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Datenschutzerklärung – JawasWelt218</title>
+  <link rel="stylesheet" href="/style.css" />
+  <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+</head>
+<body>
+
+  <!-- Dark Mode Umschalter -->
+  <button id="themeToggle" aria-label="Dark Mode">🌙</button>
+
+  <div id="footer-placeholder"></div>
+  <script src="/footer.js"></script>
+
+  <script>
+    const toggleBtn = document.getElementById("themeToggle");
+    const userTheme = localStorage.getItem("theme");
+    if (userTheme === "dark") {
+      document.body.classList.add("dark-mode");
+      toggleBtn.textContent = "☀️";
+    }
+
+    toggleBtn.addEventListener("click", () => {
+      document.body.classList.toggle("dark-mode");
+      const isDark = document.body.classList.contains("dark-mode");
+      toggleBtn.textContent = isDark ? "☀️" : "🌙";
+      localStorage.setItem("theme", isDark ? "dark" : "light");
+    });
+  </script>
 </body>
 </html>
