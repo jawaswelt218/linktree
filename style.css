@@ -265,3 +265,29 @@ body.dark-mode .icon-title {
   background-color: var(--button-hover);
   transform: scale(1.05);
 }
+
+.footer-social-icons {
+  margin-top: 1.2rem;
+  text-align: center;
+}
+
+.footer-social-icons a {
+  margin: 0 10px;
+  font-size: 22px;
+  color: #6b7280;
+  transition: color 0.3s ease;
+  text-decoration: none;
+}
+
+.footer-social-icons a:hover {
+  color: var(--primary);
+}
+
+body.dark-mode .footer-social-icons a {
+  color: #aaa;
+}
+
+body.dark-mode .footer-social-icons a:hover {
+  color: #fff;
+}
+
