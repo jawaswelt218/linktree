@@ -118,6 +118,7 @@ body {
   font-weight: 600;
 }
 
+/* Galerie */
 .gallery {
   display: flex;
   gap: 12px;
@@ -130,7 +131,7 @@ body {
   height: 120px;
   object-fit: cover;
   border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
   transition: transform 0.3s ease;
   cursor: pointer;
 }
@@ -139,6 +140,7 @@ body {
   transform: scale(1.05);
 }
 
+/* Lightbox */
 .lightbox {
   display: none;
   position: fixed;
@@ -156,7 +158,7 @@ body {
   max-width: 90vw;
   max-height: 80vh;
   border-radius: 12px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
 }
 
 /* FOOTER */
@@ -183,29 +185,37 @@ body {
 }
 
 .footer-note {
-  margin-top: 0.4rem;
   font-size: 0.8rem;
   color: #9ca3af;
 }
 
-/* Social Media Icons im Footer */
-.footer-social-icons {
-  margin-bottom: 0.6rem;
+/* Kontakt + Social Icons in einer Zeile */
+.footer-contact-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 0.4rem;
 }
 
-.footer-social-icons a {
-  margin: 0 12px;
-  font-size: 22px;
+.footer-social-icons-inline {
+  display: flex;
+  gap: 10px;
+}
+
+.footer-social-icons-inline a {
+  font-size: 18px;
   color: #6b7280;
   transition: color 0.3s ease;
   text-decoration: none;
 }
 
-.footer-social-icons a:hover {
+.footer-social-icons-inline a:hover {
   color: var(--primary);
 }
 
-/* DARK MODE */
+/* Dark Mode */
 body.dark-mode {
   background: linear-gradient(to bottom right, #1e1e1e, #2a2a2a);
 }
@@ -242,11 +252,11 @@ body.dark-mode .icon-title {
   color: #e5e7eb;
 }
 
-body.dark-mode .footer-social-icons a {
+body.dark-mode .footer-social-icons-inline a {
   color: #aaa;
 }
 
-body.dark-mode .footer-social-icons a:hover {
+body.dark-mode .footer-social-icons-inline a:hover {
   color: #fff;
 }
 
