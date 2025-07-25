@@ -22,6 +22,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 <body>
+  <!-- Dark Mode Umschalter -->
   <button id="themeToggle" aria-label="Dark Mode">🌙</button>
 
   <div class="container">
@@ -30,43 +31,44 @@
 
     <div class="section-separator"></div>
 
-    <!-- Shops Section -->
-    <div class="icon-section">
-      <div class="icon-group">
-        <div class="icon-title">Shops</div>
-        <div class="icon-links">
-          <a href="https://www.ebay.de/usr/jawaswelt218" target="_blank"><img src="icon_ebay.png" alt="eBay Shop"></a>
-          <a href="https://www.kleinanzeigen.de/s-bestandsliste.html?userId=153217862" target="_blank"><img src="icon_kleinanzeigen.png" alt="Kleinanzeigen Shop"></a>
-          <a href="https://www.etsy.com/de/shop/JawasWelt218" target="_blank"><img src="icon_etsy.png" alt="Etsy Shop"></a>
-        </div>
+    <!-- Shops -->
+    <div class="icon-group">
+      <div class="icon-title">Shops</div>
+      <div class="icon-links">
+        <a href="https://www.ebay.de/usr/jawaswelt218" target="_blank"><img src="icon_ebay.png" alt="eBay Shop von JawasWelt218"></a>
+        <a href="https://www.kleinanzeigen.de/s-bestandsliste.html?userId=153217862" target="_blank"><img src="icon_kleinanzeigen.png" alt="Kleinanzeigen Shop von JawasWelt218"></a>
+        <a href="https://www.etsy.com/de/shop/JawasWelt218" target="_blank"><img src="icon_etsy.png" alt="Etsy Shop von JawasWelt218"></a>
       </div>
     </div>
 
     <div class="section-separator"></div>
 
-    <!-- Galerie Section -->
+    <!-- Galerie -->
     <div class="gallery-section">
       <div class="gallery-card">
         <div class="gallery-title">❤️ Galerie ❤️</div>
         <div class="gallery">
-          <a href="galerie_bild1.jpg" class="lightbox-link"><img src="galerie_bild1.jpg" alt="Lithophane 1"></a>
-          <a href="galerie_bild2.jpg" class="lightbox-link"><img src="galerie_bild2.jpg" alt="Lithophane 2"></a>
-          <a href="galerie_bild3.jpg" class="lightbox-link"><img src="galerie_bild3.jpg" alt="Lithophane 3"></a>
-          <a href="galerie_bild4.jpg" class="lightbox-link"><img src="galerie_bild4.jpg" alt="Lithophane 4"></a>
-          <a href="galerie_bild5.jpg" class="lightbox-link"><img src="galerie_bild5.jpg" alt="Lithophane 5"></a>
+          <a href="galerie_bild1.jpg" class="lightbox-link"><img src="galerie_bild1.jpg" alt="Lithophane Portrait mit Hintergrundbeleuchtung"></a>
+          <a href="galerie_bild2.jpg" class="lightbox-link"><img src="galerie_bild2.jpg" alt="3D-Katzenmotiv im Licht"></a>
+          <a href="galerie_bild3.jpg" class="lightbox-link"><img src="galerie_bild3.jpg" alt="Zylinderlampe mit Fotomotiv"></a>
+          <a href="galerie_bild4.jpg" class="lightbox-link"><img src="galerie_bild4.jpg" alt="Romantisches Paar auf Lithophan"></a>
+          <a href="galerie_bild5.jpg" class="lightbox-link"><img src="galerie_bild5.jpg" alt="Herzform mit personalisiertem Foto"></a>
         </div>
       </div>
     </div>
   </div>
 
+  <!-- Lightbox -->
   <div id="lightbox" class="lightbox">
     <img id="lightbox-img" src="" alt="Großansicht">
   </div>
 
+  <!-- Nach oben Button -->
+  <button onclick="scrollToTop()" id="scrollTopBtn" title="Nach oben"><i class="fas fa-chevron-up"></i></button>
+
+  <!-- Footer -->
   <div id="footer-placeholder"></div>
   <script src="/footer.js"></script>
-
-  <button id="scrollTopBtn" title="Nach oben">⬆️</button>
 
   <script>
     // Dark Mode
@@ -76,6 +78,7 @@
       document.body.classList.add("dark-mode");
       toggleBtn.textContent = "☀️";
     }
+
     toggleBtn.addEventListener("click", () => {
       document.body.classList.toggle("dark-mode");
       const isDark = document.body.classList.contains("dark-mode");
@@ -102,14 +105,15 @@
       }
     });
 
-    // Scroll to Top
-    const scrollTopBtn = document.getElementById("scrollTopBtn");
-    window.addEventListener("scroll", () => {
-      scrollTopBtn.style.display = window.scrollY > 200 ? "block" : "none";
-    });
-    scrollTopBtn.addEventListener("click", () => {
+    // Scroll-to-top button
+    const scrollBtn = document.getElementById("scrollTopBtn");
+    window.onscroll = function () {
+      scrollBtn.style.display = window.scrollY > 300 ? "block" : "none";
+    };
+
+    function scrollToTop() {
       window.scrollTo({ top: 0, behavior: "smooth" });
-    });
+    }
   </script>
 </body>
 </html>
