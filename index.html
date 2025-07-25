@@ -5,8 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>JawasWelt218 – Personalisierte Lichtkunst & 3D-Fotogeschenke</title>
   <link rel="icon" href="favicon.ico" type="image/x-icon" />
-
-  <!-- SEO & Social Preview -->
   <meta name="description" content="JawasWelt218 – einzigartige 3D-Lithophane, personalisierte Lichtkunst & Fotogeschenke mit Herz. Jetzt auf Etsy, Amazon & eBay entdecken.">
   <meta property="og:title" content="JawasWelt218 – Lichtkunst & Fotogeschenke">
   <meta property="og:description" content="Einzigartige 3D-Lithophane & personalisierte Geschenke mit Herz. Jetzt entdecken.">
@@ -22,25 +20,26 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 <body>
-  <!-- Dark Mode Umschalter -->
   <button id="themeToggle" aria-label="Dark Mode">🌙</button>
 
   <div class="container">
     <img src="logo.png" alt="Logo von JawasWelt218" class="profile-pic" />
     <p class="description">Einzigartige 3D-Lithophane, personalisierte Lichtkunst und Fotogeschenke mit Herz</p>
 
-    <!-- Begin Shops Section -->
+    <!-- Shops -->
     <div class="icon-section">
       <div class="icon-group">
         <div class="icon-title">Shops</div>
         <div class="icon-links">
-          <a href="https://www.ebay.de/usr/jawaswelt218" target="_blank" class="ebay"><img src="icon_ebay.png" alt="eBay Shop von JawasWelt218"></a>
-          <a href="https://www.kleinanzeigen.de/s-bestandsliste.html?userId=153217862" target="_blank" class="kleinanzeigen"><img src="icon_kleinanzeigen.png" alt="Kleinanzeigen Shop von JawasWelt218"></a>
-          <a href="https://www.etsy.com/de/shop/JawasWelt218" target="_blank" class="etsy"><img src="icon_etsy.png" alt="Etsy Shop von JawasWelt218"></a>
+          <a href="https://www.ebay.de/usr/jawaswelt218" target="_blank"><img src="icon_ebay.png" alt="eBay Shop von JawasWelt218"></a>
+          <a href="https://www.kleinanzeigen.de/s-bestandsliste.html?userId=153217862" target="_blank"><img src="icon_kleinanzeigen.png" alt="Kleinanzeigen Shop von JawasWelt218"></a>
+          <a href="https://www.etsy.com/de/shop/JawasWelt218" target="_blank"><img src="icon_etsy.png" alt="Etsy Shop von JawasWelt218"></a>
         </div>
       </div>
     </div>
-    <!-- End Shops Section -->
+
+    <!-- Trennlinie -->
+    <div class="section-separator"></div>
 
     <!-- Galerie -->
     <div class="icon-divider">✨ Galerie ✨</div>
@@ -51,12 +50,18 @@
       <a href="galerie_bild4.jpg" class="lightbox-link"><img src="galerie_bild4.jpg" alt="Romantisches Paar auf Lithophan"></a>
       <a href="galerie_bild5.jpg" class="lightbox-link"><img src="galerie_bild5.jpg" alt="Herzform mit personalisiertem Foto"></a>
     </div>
+
+    <!-- Trennlinie -->
+    <div class="section-separator"></div>
   </div>
 
   <!-- Lightbox -->
   <div id="lightbox" class="lightbox">
     <img id="lightbox-img" src="" alt="Großansicht">
   </div>
+
+  <!-- Zurück nach oben -->
+  <button id="scrollTopBtn" title="Nach oben">🔝</button>
 
   <!-- Footer -->
   <div id="footer-placeholder"></div>
@@ -91,11 +96,19 @@
     lightbox.addEventListener("click", () => {
       lightbox.style.display = "none";
     });
-    // ESC schließt Lightbox
     document.addEventListener("keydown", e => {
       if (e.key === "Escape") {
         lightbox.style.display = "none";
       }
+    });
+
+    // Scroll-to-top Button
+    const scrollBtn = document.getElementById("scrollTopBtn");
+    window.addEventListener("scroll", () => {
+      scrollBtn.style.display = window.scrollY > 300 ? "block" : "none";
+    });
+    scrollBtn.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
     });
   </script>
 </body>
