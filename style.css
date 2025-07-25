@@ -50,30 +50,23 @@ body {
   margin-bottom: 2rem;
 }
 
-/* Strukturierte Karten-Icons */
-.icon-section {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  margin-bottom: 2rem;
-  align-items: center;
+.section-divider {
+  border: none;
+  border-top: 1px solid #e0e0e0;
+  margin: 2.5rem 0 2rem;
 }
 
-.icon-group {
-  background: #f9fafb;
-  padding: 1.5rem 2rem;
-  border-radius: 20px;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
-  width: 100%;
-  max-width: 450px;
-  text-align: center;
+.section-card {
+  background: #fdfdfd;
+  border-radius: 16px;
+  padding: 2rem;
+  margin-bottom: 2.5rem;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.06);
   transition: transform 0.3s ease;
-  transform: scale(1.2);
 }
 
-
-.icon-group:hover {
-  transform: translateY(-4px);
+.section-card:hover {
+  transform: scale(1.01);
 }
 
 .icon-title {
@@ -83,10 +76,11 @@ body {
   font-size: 1.1rem;
 }
 
-.icon-group .icon-links {
+.icon-links {
   display: flex;
   justify-content: center;
-  gap: 16px;
+  gap: 2rem;
+  margin-top: 1.5rem;
 }
 
 .icon-links a {
@@ -101,7 +95,6 @@ body {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
   transition: transform 0.3s ease;
 }
-
 
 .icon-links a:hover {
   transform: scale(1.1);
@@ -121,7 +114,6 @@ body {
   font-weight: 600;
 }
 
-/* Galerie */
 .gallery {
   display: flex;
   gap: 12px;
@@ -143,7 +135,6 @@ body {
   transform: scale(1.05);
 }
 
-/* Lightbox */
 .lightbox {
   display: none;
   position: fixed;
@@ -164,7 +155,6 @@ body {
   box-shadow: 0 0 20px rgba(0,0,0,0.5);
 }
 
-/* FOOTER */
 .footer {
   margin-top: auto;
   padding: 1.5rem 1rem 0.8rem;
@@ -192,7 +182,6 @@ body {
   color: #9ca3af;
 }
 
-/* Kontakt + Social Icons in einer Zeile */
 .footer-contact-row {
   display: flex;
   justify-content: center;
@@ -218,7 +207,6 @@ body {
   color: var(--primary);
 }
 
-/* Dark Mode */
 body.dark-mode {
   background: linear-gradient(to bottom right, #1e1e1e, #2a2a2a);
 }
@@ -263,7 +251,6 @@ body.dark-mode .footer-social-icons-inline a:hover {
   color: #fff;
 }
 
-/* Zurück-Button */
 .back-home {
   margin-top: 2.5rem;
   text-align: center;
@@ -286,7 +273,6 @@ body.dark-mode .footer-social-icons-inline a:hover {
   transform: scale(1.05);
 }
 
-/* MEDIA QUERIES */
 @media (max-width: 400px) {
   .profile-pic { width: 70vw; }
   .icon-links a { width: 56px; height: 56px; }
@@ -302,12 +288,11 @@ body.dark-mode .footer-social-icons-inline a:hover {
   }
 }
 
-/* Animation */
 @keyframes fadeIn {
   from { opacity: 0; transform: scale(0.98); }
   to { opacity: 1; transform: scale(1); }
 }
-/* Trennlinie zwischen Bereichen */
+
 .section-separator {
   height: 2px;
   background: #e5e7eb;
@@ -316,7 +301,6 @@ body.dark-mode .footer-social-icons-inline a:hover {
   border-radius: 1px;
 }
 
-/* Nach-oben-Button */
 #scrollTopBtn {
   position: fixed;
   bottom: 24px;
@@ -338,7 +322,6 @@ body.dark-mode .footer-social-icons-inline a:hover {
   background-color: var(--button-hover);
 }
 
-/* Dark Mode für Scroll Button */
 body.dark-mode #scrollTopBtn {
   background-color: #333;
   color: #fff;
@@ -347,4 +330,3 @@ body.dark-mode #scrollTopBtn {
 body.dark-mode #scrollTopBtn:hover {
   background-color: #555;
 }
-
