@@ -61,14 +61,16 @@ body {
 
 .icon-group {
   background: #f9fafb;
-  padding: 1rem 1.5rem;
-  border-radius: 16px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  padding: 1.5rem 2rem;
+  border-radius: 20px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
   width: 100%;
-  max-width: 300px;
+  max-width: 450px;
   text-align: center;
   transition: transform 0.3s ease;
+  transform: scale(1.2);
 }
+
 
 .icon-group:hover {
   transform: translateY(-4px);
@@ -89,24 +91,25 @@ body {
 
 .icon-links a {
   background: #f3f3f3;
-  padding: 12px;
+  padding: 16px;
   border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 64px;
-  height: 64px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  width: 84px;
+  height: 84px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
   transition: transform 0.3s ease;
 }
+
 
 .icon-links a:hover {
   transform: scale(1.1);
 }
 
 .icon-links a img {
-  max-width: 60px;
-  max-height: 60px;
+  max-width: 70px;
+  max-height: 70px;
   object-fit: contain;
 }
 
