@@ -15,7 +15,6 @@
   <meta name="twitter:title" content="JawasWelt218 – Lichtkunst & 3D-Geschenke">
   <meta name="twitter:description" content="Individuelle 3D-Lichtkunst mit Herz. Jetzt im Etsy-, Amazon- oder eBay-Shop stöbern.">
   <meta name="twitter:image" content="https://jawaswelt218.de/social_preview_jawaswelt218.jpg">
-
   <link rel="stylesheet" href="/style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
@@ -25,41 +24,40 @@
   <div class="container">
     <img src="logo.png" alt="Logo von JawasWelt218" class="profile-pic" />
     <p class="description">Einzigartige 3D-Lithophane, personalisierte Lichtkunst und Fotogeschenke mit Herz</p>
-  </div>
 
-  <hr class="section-divider" />
+    <hr class="section-divider" />
 
-  <div class="content-block">
-    <div class="icon-title">🛍️ Shops</div>
-    <div class="icon-links">
-      <a href="https://www.ebay.de/usr/jawaswelt218" target="_blank"><img src="icon_ebay.png" alt="eBay"></a>
-      <a href="https://www.kleinanzeigen.de/s-bestandsliste.html?userId=153217862" target="_blank"><img src="icon_kleinanzeigen.png" alt="Kleinanzeigen"></a>
-      <a href="https://www.etsy.com/de/shop/JawasWelt218" target="_blank"><img src="icon_etsy.png" alt="Etsy"></a>
-    </div>
-  </div>
+    <section class="section-card">
+      <div class="icon-title">Shops</div>
+      <div class="icon-links">
+        <a href="https://www.ebay.de/usr/jawaswelt218" target="_blank"><img src="icon_ebay.png" alt="eBay Shop"></a>
+        <a href="https://www.kleinanzeigen.de/s-bestandsliste.html?userId=153217862" target="_blank"><img src="icon_kleinanzeigen.png" alt="Kleinanzeigen Shop"></a>
+        <a href="https://www.etsy.com/de/shop/JawasWelt218" target="_blank"><img src="icon_etsy.png" alt="Etsy Shop"></a>
+      </div>
+    </section>
 
-  <hr class="section-divider" />
+    <hr class="section-divider" />
 
-  <div class="content-block gallery">
-    <div class="icon-divider">✨ Galerie ✨</div>
-    <div class="gallery">
-      <a href="galerie_bild1.jpg" class="lightbox-link"><img src="galerie_bild1.jpg" alt="Bild 1"></a>
-      <a href="galerie_bild2.jpg" class="lightbox-link"><img src="galerie_bild2.jpg" alt="Bild 2"></a>
-      <a href="galerie_bild3.jpg" class="lightbox-link"><img src="galerie_bild3.jpg" alt="Bild 3"></a>
-      <a href="galerie_bild4.jpg" class="lightbox-link"><img src="galerie_bild4.jpg" alt="Bild 4"></a>
-      <a href="galerie_bild5.jpg" class="lightbox-link"><img src="galerie_bild5.jpg" alt="Bild 5"></a>
-    </div>
+    <section class="section-card">
+      <div class="icon-divider">✨ Galerie ✨</div>
+      <div class="gallery">
+        <a href="galerie_bild1.jpg" class="lightbox-link"><img src="galerie_bild1.jpg" alt="Bild 1"></a>
+        <a href="galerie_bild2.jpg" class="lightbox-link"><img src="galerie_bild2.jpg" alt="Bild 2"></a>
+        <a href="galerie_bild3.jpg" class="lightbox-link"><img src="galerie_bild3.jpg" alt="Bild 3"></a>
+        <a href="galerie_bild4.jpg" class="lightbox-link"><img src="galerie_bild4.jpg" alt="Bild 4"></a>
+        <a href="galerie_bild5.jpg" class="lightbox-link"><img src="galerie_bild5.jpg" alt="Bild 5"></a>
+      </div>
+    </section>
   </div>
 
   <div id="lightbox" class="lightbox">
     <img id="lightbox-img" src="" alt="Großansicht">
   </div>
 
-  <button id="scrollTopBtn" title="Nach oben"><i class="fas fa-chevron-up"></i></button>
-
   <div id="footer-placeholder"></div>
-  <script src="/footer.js"></script>
+  <button id="scrollToTop" title="Zurück nach oben">⬆️</button>
 
+  <script src="/footer.js"></script>
   <script>
     const toggleBtn = document.getElementById("themeToggle");
     const userTheme = localStorage.getItem("theme");
@@ -76,30 +74,28 @@
     });
 
     document.querySelectorAll(".lightbox-link").forEach(link => {
-      link.addEventListener("click", function (e) {
+      link.addEventListener("click", e => {
         e.preventDefault();
-        document.getElementById("lightbox-img").src = this.href;
+        document.getElementById("lightbox-img").src = link.href;
         document.getElementById("lightbox").style.display = "flex";
       });
     });
-
     document.getElementById("lightbox").addEventListener("click", () => {
       document.getElementById("lightbox").style.display = "none";
     });
-
     document.addEventListener("keydown", e => {
       if (e.key === "Escape") {
         document.getElementById("lightbox").style.display = "none";
       }
     });
 
-    const scrollBtn = document.getElementById("scrollTopBtn");
-    window.addEventListener("scroll", () => {
-      scrollBtn.style.display = window.scrollY > 300 ? "block" : "none";
-    });
-    scrollBtn.addEventListener("click", () => {
+    const topButton = document.getElementById("scrollToTop");
+    window.onscroll = () => {
+      topButton.style.display = window.scrollY > 300 ? "block" : "none";
+    };
+    topButton.onclick = () => {
       window.scrollTo({ top: 0, behavior: "smooth" });
-    });
+    };
   </script>
 </body>
 </html>
