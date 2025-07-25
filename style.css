@@ -293,13 +293,54 @@ body.dark-mode .footer-social-icons-inline a:hover {
   to { opacity: 1; transform: scale(1); }
 }
 
+
 .section-separator {
   height: 2px;
   background: #e5e7eb;
-  margin: 3rem auto 3rem;
+  margin: 3rem auto;
   width: 80%;
   border-radius: 1px;
 }
+
+.gallery-title {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #d97706;
+  margin-bottom: 1.2rem;
+  font-weight: 600;
+  color: #dc2626;
+}
+
+
+.gallery-card {
+  background: #f9fafb;
+  padding: 1.5rem 2rem;
+  border-radius: 20px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+
+.gallery-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 3rem;
+}
+
+.icon-group {
+  background: #f9fafb;
+  padding: 1.5rem 2rem;
+  border-radius: 20px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  width: 100%;
+  max-width: 800px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
 
 #scrollTopBtn {
   position: fixed;
