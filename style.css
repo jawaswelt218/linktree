@@ -317,39 +317,45 @@ body.dark-mode .footer a:hover {
     font-size: 0.8rem;
   }
 }
-/* ===== ANNOUNCEMENT BANNER ===== */
+/* ===== ANNOUNCEMENT BANNER - DEZENT ===== */
 .announcement-bar {
   width: 100%;
-  background: linear-gradient(90deg, #4f46e5, #7c3aed);
-  color: white;
+  height: 34px;
+  background: linear-gradient(90deg, #f8f4ed, #fff7ed, #fef3c7);
+  color: #7c2d12;
   overflow: hidden;
-  position: sticky;
-  top: 0;
-  z-index: 999;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #f3d6a3;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
 }
 
 .announcement-track {
-  display: flex;
-  width: max-content;
-  animation: scrollText 22s linear infinite;
-}
-
-.announcement-content {
   white-space: nowrap;
-  padding: 10px 40px;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  line-height: 34px;
+  padding-left: 100%;
+  animation: announcementScroll 28s linear infinite;
 }
 
-/* Hover Pause Desktop */
+/* Pause beim Hover */
 .announcement-bar:hover .announcement-track {
   animation-play-state: paused;
 }
 
-@keyframes scrollText {
-  from {
-    transform: translateX(100vw);
+@keyframes announcementScroll {
+  0% {
+    transform: translateX(0);
   }
-  to {
+  100% {
     transform: translateX(-100%);
   }
+}
+
+/* Dark Mode */
+body.dark-mode .announcement-bar {
+  background: linear-gradient(90deg, #2d2d2d, #3a2f24);
+  color: #facc15;
+  border-bottom-color: #555;
 }
