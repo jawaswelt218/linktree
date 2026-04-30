@@ -338,6 +338,7 @@ body.dark-mode .footer a:hover {
   line-height: 34px;
   padding-left: 30%;
   animation: announcementScroll 22s linear infinite;
+  transition: all 0.4s ease;
 }
 
 /* Hover = kompletter Text sichtbar */
@@ -346,7 +347,6 @@ body.dark-mode .footer a:hover {
   transform: translateX(0);
   white-space: normal;
   padding: 0 10px;
-  transition: all 0.4s ease;
 }
 
 @keyframes announcementScroll {
