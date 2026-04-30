@@ -389,3 +389,6 @@ body.dark-mode .announcement-bar {
 .tcg-title:hover .pokeball-icon {
   transform: rotate(15deg) scale(1.15);
 }
+body {
+  font-family: 'Poppins', sans-serif;
+}
