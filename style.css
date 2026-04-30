@@ -379,3 +379,13 @@ body.dark-mode .announcement-bar {
     }
   }
 }
+.pokeball-icon {
+  width: 22px;
+  height: 22px;
+  vertical-align: middle;
+  transition: transform 0.3s ease;
+}
+
+.tcg-title:hover .pokeball-icon {
+  transform: rotate(15deg) scale(1.15);
+}
