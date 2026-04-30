@@ -394,3 +394,6 @@ body.dark-mode .announcement-bar {
 body {
   font-family: 'Poppins', sans-serif;
 }
+.icon-group {
+  backdrop-filter: blur(4px);
+}
