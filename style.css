@@ -328,25 +328,28 @@ body.dark-mode .footer a:hover {
   z-index: 999;
 }
 
-.announcement-content {
-  display: inline-block;
-  white-space: nowrap;
-  padding: 10px 0;
-  font-size: 0.9rem;
-  animation: scrollText 22s linear infinite; /* langsamer = smoother */
+.announcement-track {
+  display: flex;
+  width: max-content;
+  animation: scrollText 22s linear infinite;
 }
 
-/* Hover Pause (Desktop) */
-.announcement-bar:hover .announcement-content {
+.announcement-content {
+  white-space: nowrap;
+  padding: 10px 40px;
+  font-size: 0.9rem;
+}
+
+/* Hover Pause Desktop */
+.announcement-bar:hover .announcement-track {
   animation-play-state: paused;
 }
 
-/* Animation */
 @keyframes scrollText {
-  0% {
-    transform: translateX(100%);
+  from {
+    transform: translateX(100vw);
   }
-  100% {
+  to {
     transform: translateX(-100%);
   }
 }
